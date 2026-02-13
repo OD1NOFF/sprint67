@@ -1,4 +1,4 @@
-package sprint6.src;
+package sprint67;
 
 public enum Age {
     CHILD, ADULT
