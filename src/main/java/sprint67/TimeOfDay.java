@@ -1,4 +1,5 @@
-package sprint6.src;
+package main.java.sprint67;
+import java.util.Objects;
 
 public class TimeOfDay {
 

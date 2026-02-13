@@ -1,4 +1,4 @@
-package sprint6.test;
+package test.java.sprint67;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;

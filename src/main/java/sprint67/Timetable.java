@@ -1,4 +1,4 @@
-package sprint6.src;
+package main.java.sprint67;
 import java.util.*;
 
 public class Timetable {
