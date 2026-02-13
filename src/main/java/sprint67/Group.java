@@ -1,4 +1,4 @@
-package main.java.sprint67;
+package sprint67;
 
 public class Group {
     //название группы
