@@ -46,4 +46,30 @@ public class Timetable {
 
         return sessions != null ? new ArrayList<>(sessions) : new ArrayList<>();
     }
+
+    public Map<Coach, Integer> getCountByCoaches() {
+        Map<Coach, Integer> countMap = new HashMap<>();
+
+        for (DayOfWeek day : DayOfWeek.values()) {
+            TreeMap<TimeOfDay, List<TrainingSession>> daySchedule = timetable.get(day);
+
+            for (List<TrainingSession> sessions : daySchedule.values()) {
+                for (TrainingSession session : sessions) {
+                    Coach coach = session.getCoach();
+                    countMap.put(coach, countMap.getOrDefault(coach, 0) + 1);
+                }
+            }
+        }
+
+        List<Map.Entry<Coach, Integer>> entries = new ArrayList<>(countMap.entrySet());
+        entries.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+
+        Map<Coach, Integer> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<Coach, Integer> entry : entries) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        return sortedMap;
+    }
+
 }
